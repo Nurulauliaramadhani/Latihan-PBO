@@ -37,12 +37,29 @@ public class UserInterface {
                     System.out.print("ALAMAT         :  ");
                     String alamat = sc.nextLine();
                     System.out.print("SEMESTER       :  ");
+                    while (!sc.hasNextInt()) {
+                        System.out.println("Masukkan angka yang valid untuk SEMESTER!");
+                        sc.next();
+                    }
                     int semester = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.print("SKS            :  ");
+                    while (!sc.hasNextInt()) {
+                        System.out.println("Masukkan angka yang valid untuk SKS!");
+                        sc.next();
+                    }
                     int sks = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.print("IPK            :  ");
+                    while (!sc.hasNextDouble()) {
+                        System.out.println("Masukkan angka yang valid untuk IPK!");
+                        sc.next();
+                    }
                     double ipk = sc.nextDouble();
                     sc.nextLine();
+
                     System.out.println("----------------------------------------");
                     boolean status = db.insert(nim,nama,alamat,semester,sks,ipk);
                     if (status==true){
